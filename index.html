@@ -16,70 +16,72 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&family=Ropa+Sans&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./src/style.css" />
   </head>
-  <body>
-    <div class="container">
-      <form class="search-box">
-        <input type="text" placeholder="Search city.. " />
-        <button type="reset"></button>
-      </form>
-      <span>
-        <button id="location-search" class="locationPin">📍</button>
-      </span>
-      <span class="UnitOfMeasure"
-        ><a class="degree" id="degreeLink" href="#">℃</a>
-        <a class="fahrenheit" id="fahrenheitLink" href="#">/°F</a></span
-      >
-      <div class="date" id="live-date"></div>
-      <div id="live-weather-icon" class="weather-icon">
-        <img
-          src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-day.png"
-          alt="scattered-clouds-day"
-        />
-      </div>
-      <div>
-        <span class="curentTemp" id="live-Temp">23</span>
-      </div>
-      <div>
-        <p class="currentDescription" id="live-description">Mostly cloudy</p>
-      </div>
+  <body class="container">
+    <form class="search-box">
+      <input type="text" placeholder="Search city.. " />
+      <button type="reset"></button>
+    </form>
+    <span>
+      <button id="location-search" class="locationPin">📍</button>
+    </span>
+    <span class="UnitOfMeasure">
+      <a class="degree" id="degreeLink" href="#">℃</a>
+      <a class="fahrenheit" id="fahrenheitLink" href="#">/°F</a>
+    </span>
+    <div class="date" id="live-date"></div>
+    <div id="live-weather-icon" class="weather-icon">
+      <img
+        src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-day.png"
+        alt="scattered-clouds-day"
+      />
+    </div>
+    <h3 class="live-City" id="live-City">Johannesburg</h3>
+    <span class="curentTemp" id="live-Temp">23</span>
 
-      <div class="row" id="conditions">
-        <div class="col-8" id="liveHumidity">Humidity:</div>
-        <div class="col-4" id="liveWind">Wind:</div>
+    <div>
+      <p class="currentDescription" id="live-description">Mostly cloudy</p>
+    </div>
+    <div class="row" id="conditions">
+      <div class="col-8" id="liveHumidity">Humidity:</div>
+      <div class="col-4" id="liveWind">Wind:</div>
+    </div>
+    <br />
+    <br />
+    <div class="row">
+      <div class="col-sm-4">Hello</div>
+      <div class="col-sm-4">
+        <img src="image3.jpg" alt="Image 3" />
       </div>
-
-      <br />
-      <br />
-      <div class="row">
-        <div class="col-sm-4">Hello</div>
-        <div class="col-sm-4">
-          <img src="image3.jpg" alt="Image 3" />
-        </div>
-        <div class="col-sm-4">Hello</div>
+      <div class="col-sm-4">Hello</div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">Hello</div>
+      <div class="col-sm-4">
+        <img src="image3.jpg" alt="Image 3" />
       </div>
-      <div class="row">
-        <div class="col-sm-4">Hello</div>
-        <div class="col-sm-4">
-          <img src="image3.jpg" alt="Image 3" />
-        </div>
-        <div class="col-sm-4">Hello</div>
+      <div class="col-sm-4">Hello</div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">Hello</div>
+      <div class="col-sm-4">
+        <img src="image3.jpg" alt="Image 3" />
       </div>
-      <div class="row">
-        <div class="col-sm-4">Hello</div>
-        <div class="col-sm-4">
-          <img src="image3.jpg" alt="Image 3" />
-        </div>
-        <div class="col-sm-4">Hello</div>
+      <div class="col-sm-4">Hello</div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">Hello</div>
+      <div class="col-sm-4">
+        <img src="image3.jpg" alt="Image 3" />
       </div>
-      <div class="row">
-        <div class="col-sm-4">Hello</div>
-        <div class="col-sm-4">
-          <img src="image3.jpg" alt="Image 3" />
-        </div>
-        <div class="col-sm-4">Hello</div>
-      </div>
+      <div class="col-sm-4">Hello</div>
     </div>
     <script src="./src/app.js"></script>
   </body>
