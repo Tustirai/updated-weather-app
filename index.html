@@ -25,12 +25,19 @@
     <link rel="stylesheet" href="./src/style.css" />
   </head>
   <body class="container">
-    <form class="search-box">
-      <input type="text" placeholder="Search city.. " />
-      <button type="reset"></button>
+    <form class="searchBox" id="search-form">
+      <input
+        class="searchInput"
+        type="text"
+        name="live-location-search"
+        placeholder="Search for city"
+      />
+      <button class="searchButton" type="submit">
+        <i class="material-icons">Look up</i>
+      </button>
     </form>
     <span>
-      <button id="location-search" class="locationPin">📍</button>
+      <button id="live-location-search" class="locationPin">📍</button>
     </span>
     <span class="UnitOfMeasure">
       <a class="degree" id="degreeLink" href="#">℃</a>
