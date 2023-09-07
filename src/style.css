@@ -5,9 +5,7 @@
   margin: 0 auto;
   font-family: "Ropa Sans", sans-serif;
   min-height: 50vh;
-}
-body {
-  font-size: large;
+  background-color: white;
 }
 
 .searchBox {
@@ -53,6 +51,7 @@ body {
   line-height: 40px;
   width: 0px;
 }
+
 .searchBox:focus-within {
   width: 50%;
 }
@@ -63,10 +62,12 @@ body {
     padding: 0 6px;
   }
 }
+
 .material-icons {
   font-size: 12px;
   font-family: "Ropa Sans", sans-serif;
 }
+
 .locationPin {
   background-color: transparent;
   border: none;
@@ -75,38 +76,45 @@ body {
   font-size: 30px;
   display: inline-block;
 }
+
 .date,
 .weather-icon,
 .curentTemp,
 .live-City {
-  background-color: transparent;
   border: none;
   margin: 0 auto;
   display: block;
   font-size: 60px;
   text-align: center;
 }
+
 #live-weather-icon {
   width: 100px;
 }
+
 .date {
   font-size: 15px;
 }
+
 .currentDescription {
   text-align: center;
 }
+
 .UnitOfMeasure {
   text-align: right;
   display: inline-block;
   color: black;
   font-size: large;
 }
+
 #conditions {
   text-align: center;
 }
+
 a:link {
   color: black;
 }
+
 a:active {
   background: black;
   color: whitesmoke;
@@ -115,11 +123,13 @@ a:active {
 a:visited {
   color: black;
 }
-#forest {
+
+#forecast {
   text-align: center;
   display: block;
   margin: 0 auto;
 }
+
 footer {
   bottom: 0;
   height: 20px;
