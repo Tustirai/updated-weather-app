@@ -76,30 +76,44 @@ function updateLocation(response) {
   getForecast(response.data.coordinates);
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
 function displayForecast(response) {
-  //let forecast = response.data.daily;
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
-  forecastHTML =
-    forecastHTML +
-    `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 4) {
+      forecastHTML =
+        forecastHTML +
+        `
     <div class="col-sm-4" id="weatherForecastDay"> 
-        X
+        ${formatDay(forecastDay.time)}
     </div>
 
     <div class="col-sm-4">
-        <img src="" id="forecastIcon" alt=" " />
+        <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+          forecastDay.condition.icon
+        }.png" id="forecastIcon" alt=" "  width="45px" />
     </div>
 
     <div class="col-sm-4" id="forecastTemp">
-        ℃ 
+         ${Math.round(forecastDay.temperature.day)}° 
     </div>
 </div>`;
 
-  forecastHTML = forecastHTML + `</div>`;
-  forecastElement.innerHTML = forecastHTML;
+      forecastHTML = forecastHTML + `</div>`;
+      forecastElement.innerHTML = forecastHTML;
+    }
+  });
 }
 
 let livelocation = document.querySelector("#live-location-search");
