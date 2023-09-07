@@ -62,38 +62,33 @@ function updateLocation(response) {
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
   iconElement.setAttribute("alt", response.data.condition.icon);
+
+  displayForecast();
 }
 
 function displayForecast(response) {
-  let forecast = response.data.daily;
+  //let forecast = response.data.daily;
 
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
-  if (forecast) {
-    forecast.forEach(function (forecastDay, index) {
-      if (index < 5) {
-        forecastHTML =
-          forecastHTML +
-          `
-          <div class="col-sm-4" id="weatherForecastDay">${updateDate(
-            forecastDay.time
-          )} </div>
+  forecastHTML =
+    forecastHTML +
+    `
+    <div class="col-sm-4" id="weatherForecastDay"> 
+        X
+    </div>
 
-        <div class="col-sm-4">
-          <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
-            forecastDay.condition.icon
-          }.png" id="forecastIcon" alt=" " />          
-        </div>
+    <div class="col-sm-4">
+        <img src="" id="forecastIcon" alt=" " />
+    </div>
 
-        <div class="col-sm-4" id="forecastTemp">
-               ${Math.round(forecastDay.temperature.day)}℃ </dsiv>`;
-      }
-    });
-  } else {
-    forecastHTML = `<div class="col-sm-12">No forecast available 🙊 </div>`;
-  }
-  forecastHTML += `</div>`;
+    <div class="col-sm-4" id="forecastTemp">
+        ℃ 
+    </div>
+</div>`;
+
+  forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
 
