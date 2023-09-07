@@ -91,29 +91,28 @@ function displayForecast(response) {
 
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
-    if (index < 4) {
-      forecastHTML =
-        forecastHTML +
-        `
-    <div class="col-sm-4" id="weatherForecastDay"> 
-        ${formatDay(forecastDay.time)}
-    </div>
+    if (index < 6) {
+      forecastHTML += `
+        <div class="col-2">
+          <div id="weatherForecastDay"> 
+            ${formatDay(forecastDay.time)}
+          </div>
 
-    <div class="col-sm-4">
-        <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
-          forecastDay.condition.icon
-        }.png" id="forecastIcon" alt=" "  width="45px" />
-    </div>
+          <div>
+            <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+              forecastDay.condition.icon
+            }.png" id="forecastIcon" alt=" " width ="40px"  />
+          </div>
 
-    <div class="col-sm-4" id="forecastTemp">
-         ${Math.round(forecastDay.temperature.day)}° 
-    </div>
-</div>`;
-
-      forecastHTML = forecastHTML + `</div>`;
-      forecastElement.innerHTML = forecastHTML;
+          <div id="forecastTemp">
+            ${Math.round(forecastDay.temperature.day)}° 
+          </div>
+        </div>
+      `;
     }
   });
+  forecastHTML += `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
 
 let livelocation = document.querySelector("#live-location-search");

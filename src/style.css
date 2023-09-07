@@ -79,8 +79,11 @@
   border: none;
   margin: 0 auto;
   display: block;
-  font-size: 50px;
+  font-size: 60px;
   text-align: center;
+}
+#live-weather-icon {
+  width: 100px;
 }
 .date {
   font-size: 15px;
