@@ -1,3 +1,13 @@
+function showJohannesburg() {
+  let query = "Johannesburg";
+  let key = "9ca6fftf31a653429384425b05bobb8e";
+  let units = "metric";
+  let url = `https://api.shecodes.io/weather/v1/current?query=${query}&key=${key}&units=${units}`;
+  axios.get(url).then(function (response) {
+    updateLocation(response);
+  });
+}
+
 function updateDate(time) {
   let date = new Date(time * 1000);
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -29,7 +39,6 @@ function updateDate(time) {
 }
 
 function updateLocation(response) {
-  console.log(response);
   document.querySelector("#live-City").innerHTML = response.data.city;
 
   let temperature = Math.round(response.data.temperature.current);
@@ -55,6 +64,39 @@ function updateLocation(response) {
   iconElement.setAttribute("alt", response.data.condition.icon);
 }
 
+function displayForecast(response) {
+  let forecast = response.data.daily;
+
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  if (forecast) {
+    forecast.forEach(function (forecastDay, index) {
+      if (index < 5) {
+        forecastHTML =
+          forecastHTML +
+          `
+          <div class="col-sm-4" id="weatherForecastDay">${updateDate(
+            forecastDay.time
+          )} </div>
+
+        <div class="col-sm-4">
+          <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+            forecastDay.condition.icon
+          }.png" id="forecastIcon" alt=" " />          
+        </div>
+
+        <div class="col-sm-4" id="forecastTemp">
+               ${Math.round(forecastDay.temperature.day)}℃ </dsiv>`;
+      }
+    });
+  } else {
+    forecastHTML = `<div class="col-sm-12">No forecast available 🙊 </div>`;
+  }
+  forecastHTML += `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 let livelocation = document.querySelector("#live-location-search");
 livelocation.addEventListener("click", function () {
   navigator.geolocation.getCurrentPosition(function (position) {
@@ -65,7 +107,6 @@ livelocation.addEventListener("click", function () {
     let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${key}&units=${units}`;
     axios.get(apiUrl).then(function (response) {
       updateLocation(response);
-      updateDate(response.data.time);
     });
   });
 });
@@ -79,19 +120,7 @@ searchForm.addEventListener("submit", function (event) {
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${query}&key=${key}&units=${units}`;
   axios.get(apiUrl).then(function (response) {
     updateLocation(response);
-    updateDate(response);
   });
 });
-
-function showJohannesburg() {
-  let query = "Johannesburg";
-  let key = "9ca6fftf31a653429384425b05bobb8e";
-  let units = "metric";
-  let url = `https://api.shecodes.io/weather/v1/current?query=${query}&key=${key}&units=${units}`;
-  axios.get(url).then(function (response) {
-    updateLocation(response);
-    updateDate(response.data.time);
-  });
-}
 
 showJohannesburg();

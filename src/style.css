@@ -91,4 +91,20 @@
 .UnitOfMeasure {
   text-align: right;
   display: inline-block;
+  color: black;
+  font-size: large;
+}
+#conditions {
+  text-align: center;
+}
+a:link {
+  color: black;
+}
+a:active {
+  background: black;
+  color: whitesmoke;
+}
+
+a:visited {
+  color: black;
 }
