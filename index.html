@@ -25,58 +25,60 @@
     <link rel="stylesheet" href="./src/style.css" />
   </head>
   <body class="container">
-    <form class="searchBox" id="search-form">
-      <input
-        class="searchInput"
-        type="text"
-        name="live-location-search"
-        placeholder="Search for city"
-      />
-      <button class="searchButton" type="submit">
-        <i class="material-icons">Search</i>
-      </button>
-    </form>
-    <span>
-      <button id="live-location-search" class="locationPin">
-        <img
-          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/096/122/original/icons8-map-pin.gif?1694106463"
-          alt="locationPinGif"
+    <div class="weather-app">
+      <form class="searchBox" id="search-form">
+        <input
+          class="searchInput"
+          type="text"
+          name="live-location-search"
+          placeholder="Search for city"
         />
-      </button>
-    </span>
-    <div class="date" id="live-date"></div>
-    <div class="weather-icon">
-      <img id="live-weather-icon" src=" " alt=" " />
-    </div>
-    <h3 class="live-City" id="live-City">Johannesburg</h3>
-    <span class="curentTemp" id="live-Temp">23°C</span>
-
-    <div>
-      <p class="currentDescription" id="live-description">Mostly cloudy</p>
-    </div>
-    <div class="row" id="conditions">
-      <div class="col-6">
-        <img
-          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/096/124/original/icons8-humidity.gif?1694107220"
-          alt="Humidity gif"
-        />
-        <span id="liveHumidity">Humidity:</span>
+        <button class="searchButton" type="submit">
+          <i class="material-icons">Search</i>
+        </button>
+      </form>
+      <span>
+        <button id="live-location-search" class="locationPin">
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/096/122/original/icons8-map-pin.gif?1694106463"
+            alt="locationPinGif"
+          />
+        </button>
+      </span>
+      <div class="date" id="live-date"></div>
+      <div class="weather-icon">
+        <img id="live-weather-icon" src=" " alt=" " />
       </div>
-      <div class="col-6">
-        <img
-          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/096/123/original/icons8-wind.gif?1694106754"
-          alt="Wind gif"
-          width="20px"
-        />
-        <span id="liveWind">Wind:</span>
+      <h3 class="live-City" id="live-City">Johannesburg</h3>
+      <span class="curentTemp" id="live-Temp">23°C</span>
+
+      <div>
+        <p class="currentDescription" id="live-description">Mostly cloudy</p>
       </div>
+      <div class="row" id="conditions">
+        <div class="col-6">
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/096/124/original/icons8-humidity.gif?1694107220"
+            alt="Humidity gif"
+          />
+          <span id="liveHumidity">Humidity:</span>
+        </div>
+        <div class="col-6">
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/096/123/original/icons8-wind.gif?1694106754"
+            alt="Wind gif"
+            width="20px"
+          />
+          <span id="liveWind">Wind:</span>
+        </div>
+      </div>
+
+      <br />
+      <br />
+      <div class="row" id="forecast"></div>
+
+      <script src="./src/app.js"></script>
     </div>
-
-    <br />
-    <br />
-    <div class="row" id="forecast"></div>
-
-    <script src="./src/app.js"></script>
   </body>
   <footer>
     <p>

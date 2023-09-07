@@ -1,16 +1,23 @@
 .container {
-  border: 5px solid #e2eaf2;
+  border: 2px solid black;
   border-radius: 24px;
   width: 600px;
   margin: 0 auto;
   font-family: "Ropa Sans", sans-serif;
-  min-height: 50vh;
+  background-color: white;
+}
+
+.weather-app {
+  border: 2px solid black;
+  border-radius: 24px;
+  padding: 10px;
+  margin: 50px;
   background-color: white;
 }
 
 .searchBox {
   position: relative;
-  margin: 10 auto;
+  margin: 0 auto 50px;
   text-align: center;
   height: 40px;
   border-radius: 40px;
@@ -39,6 +46,7 @@
   justify-content: center;
   align-items: center;
   transition: 0.4s;
+  cursor: pointer;
 }
 
 .searchInput {
@@ -50,6 +58,7 @@
   transition: 0.4s;
   line-height: 40px;
   width: 0px;
+  background-color: white;
 }
 
 .searchBox:focus-within {
