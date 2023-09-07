@@ -38,6 +38,16 @@ function updateDate(time) {
   ).innerHTML = `${currentMonth} | ${days[day]} | ${currentTime} `;
 }
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let key = "9ca6fftf31a653429384425b05bobb8e";
+  let units = "metric";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${key}&units=${units}`;
+
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function updateLocation(response) {
   document.querySelector("#live-City").innerHTML = response.data.city;
 
@@ -63,12 +73,12 @@ function updateLocation(response) {
   );
   iconElement.setAttribute("alt", response.data.condition.icon);
 
-  displayForecast();
+  getForecast(response.data.coordinates);
 }
 
 function displayForecast(response) {
   //let forecast = response.data.daily;
-
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -106,8 +116,8 @@ livelocation.addEventListener("click", function () {
   });
 });
 
-let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", function (event) {
+let searchCity = document.querySelector("#search-form");
+searchCity.addEventListener("submit", function (event) {
   event.preventDefault();
   let query = document.querySelector(".searchInput").value;
   let key = "9ca6fftf31a653429384425b05bobb8e";
