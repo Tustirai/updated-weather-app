@@ -4,6 +4,7 @@
   width: 600px;
   margin: 0 auto;
   font-family: "Ropa Sans", sans-serif;
+  min-height: 50vh;
 }
 body {
   font-size: large;
@@ -116,6 +117,16 @@ a:visited {
 }
 #forest {
   text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+footer {
+  bottom: 0;
+  height: 20px;
+  text-align: center;
+  position: relative;
+  font-size: 15px;
+  padding: 20px;
   display: block;
   margin: 0 auto;
 }
