@@ -1,5 +1,5 @@
 .container {
-  border: 2px solid #e2eaf2;
+  border: 5px solid #e2eaf2;
   border-radius: 24px;
   width: 600px;
   margin: 0 auto;
@@ -70,7 +70,7 @@ body {
   background-color: transparent;
   border: none;
   padding: 10px;
-  margin: 10px;
+  margin: 20px;
   font-size: 30px;
   display: inline-block;
 }
