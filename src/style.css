@@ -5,6 +5,9 @@
   margin: 0 auto;
   font-family: "Ropa Sans", sans-serif;
 }
+body {
+  font-size: large;
+}
 
 .searchBox {
   position: relative;
@@ -110,4 +113,9 @@ a:active {
 
 a:visited {
   color: black;
+}
+#forest {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
 }
