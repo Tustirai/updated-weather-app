@@ -52,7 +52,7 @@ function updateLocation(response) {
   document.querySelector("#live-City").innerHTML = response.data.city;
 
   let temperature = Math.round(response.data.temperature.current);
-  document.querySelector("#live-Temp").innerHTML = `${temperature}`;
+  document.querySelector("#live-Temp").innerHTML = `${temperature}°C`;
 
   document.querySelector("#live-description").innerHTML =
     response.data.condition.description.charAt(0).toUpperCase() +
@@ -105,7 +105,7 @@ function displayForecast(response) {
           </div>
 
           <div id="forecastTemp">
-            ${Math.round(forecastDay.temperature.day)}° 
+            ${Math.round(forecastDay.temperature.day)}°C 
           </div>
         </div>
       `;
